@@ -20,7 +20,7 @@ app.get('/calculate-returns', (req, res) => {
   let boughtAt = parseFloat(req.query.boughtAt);
   let marketPrice = parseFloat(req.query.marketPrice);
   let quantity = parseFloat(req.query.quantity);
-  let result = calculateReturns(boughtAt, marketPrice, quantity);
+  let result = calculateReturns(boughtAt, marketPrice, quantity).toFixed(2);
 
   res.send(result.toString());
 });
@@ -38,7 +38,7 @@ app.get('/total-returns', (req, res) => {
   let stock2 = parseFloat(req.query.stock2);
   let stock3 = parseFloat(req.query.stock3);
   let stock4 = parseFloat(req.query.stock4);
-  let result = totalReturns(stock1, stock2, stock3, stock4);
+  let result = totalReturns(stock1, stock2, stock3, stock4).toFixed(2);
 
   res.send(result.toString());
 });
@@ -54,7 +54,7 @@ function calculateReturnPercentage(boughtAt, returns) {
 app.get('/calculate-return-percentage', (req, res) => {
   let boughtAt = parseFloat(req.query.boughtAt);
   let returns = parseFloat(req.query.returns);
-  let result = calculateReturnPercentage(boughtAt, returns);
+  let result = calculateReturnPercentage(boughtAt, returns).toFixed(2);
 
   res.send(result.toString());
 });
@@ -73,7 +73,7 @@ app.get('/total-return-percentage', (req, res) => {
   let stock3 = parseFloat(req.query.stock3);
   let stock4 = parseFloat(req.query.stock4);
 
-  let result = totalReturnPercentage(stock1, stock2, stock3, stock4);
+  let result = totalReturnPercentage(stock1, stock2, stock3, stock4).toFixed(2);
   res.send(result.toString());
 });
 
