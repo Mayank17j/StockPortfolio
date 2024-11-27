@@ -60,11 +60,11 @@ app.get('/calculate-return-percentage', (req, res) => {
 });
 
 /*
-Endpoint 4: Calculate the Total Return Percentage
+Endpoint 4: Calculate the Total Return Percentage for the given stocks return %
 API Call: <http://localhost:3000/total-return-percentage?stock1=10&stock2=20&stock3=20&stock4=40>
 Expected Output: 90
 */
-function totalReturns(stock1, stock2, stock3, stock4) {
+function totalReturnPercentage(stock1, stock2, stock3, stock4) {
   return stock1 + stock2 + stock3 + stock4;
 }
 app.get('/total-return-percentage', (req, res) => {
